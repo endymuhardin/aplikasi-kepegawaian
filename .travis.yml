@@ -1,0 +1,14 @@
+language: java
+jdk:
+- oraclejdk8
+script:
+- mvn cobertura:cobertura
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+deploy:
+  provider: heroku
+  api_key:
+    secure: apujW+mW+iBxQw9QigTI9uhyB2dOKzNaqXDZC0Kvu7kOFtG7LJjMQ0osqBHtfLL7+HmSY4c22zMqS0OcTqnBxVUldKmLJEdrgKCSBHX15CG4r8RyhXWhacBZo/5jMaN0/WEvNuUWbIjv9LwxkLh6M2Gk2kNYYf1In/FAknXnniRq+Z4ynsBqNLDhQ13P/B5ghJjEUjG5q71LXtOfYJ00nijwD+KFf2sU3AilFfRsLGZ/TGdTZxmrKJnPveND/QrdLnU3vDN7U/Ff/Aao5NphhC+M0p9XqAIKFDlUnOCFgcEHBRjvzW1EFX3snZL+Ke0bkvhhyGsN/vIE1xwQPe4e6VKBEPpaSCwayAI0Ggsd8ALXWv5NxzCSY917hiOmzPPEGR52pHb9adke6+YwRWRQ9EhhKFw3L0QVzK/APczHjOBPEyy1g98LV/q/UDaHBjF1DZFdTeURCUH09HipiFlDPjSAxuYz+Le2hhjl8eoXK9IM9Tq2lSAC9l+ahhFctr0ZLGu7XkjFp8F5oCSQsaXKA1x/LZ5evFG1EDZZxh9biuyehz0QsC9dOCbiKHXcfy2lAE0esl2+MSA6cakc6EKj9BEvf1OJLdkV+80EhCY3fdCU/CrAqiSq97jD1IhMnKPeVhbDovIFDbHlOAoB0zbmMaJnPRgCcviVhRpS7CpsS4k=
+  app: aplikasi-kepegawaian
+  on:
+    repo: idtazkia/aplikasi-kepegawaian
